@@ -17,11 +17,12 @@ pipeline {
 
     stage('cat README') {
       when {
-        branch "otherSCM*"
+        branch "test*"
       }
 
       steps {
         sh '''
+          ls -a
           cat README.md
         '''
       }
