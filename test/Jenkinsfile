@@ -19,12 +19,13 @@ pipeline {
       //when {
       //  branch "test*"
       //}
-
+      
       steps {
         sh '''
           ls -a
           echo "ABC"
           cat README.md
+          docker ps
         '''
       }
     }
