@@ -27,19 +27,19 @@ pipeline {
           ls -a
           echo "ABC"
           cat README.md
-          echo ${TEST}
+          echo ${DOCKERFILE_CONTENT}
           '''
         }
 
-        configFileProvider(
+        /*configFileProvider(
         [configFile(fileId: 'service_dockerfile', variable: 'DOCKERFILE_CONTENT')]){
           sh '''
           ls -a
           echo "ABC"
           cat README.md
-          echo ${TEST}
+          echo ${DOCKERFILE_CONTENT}
           '''
-        }
+        }*/
       }
     }
   }
