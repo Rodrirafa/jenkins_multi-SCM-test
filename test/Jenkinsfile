@@ -27,7 +27,7 @@ pipeline {
           ls -a
           echo "ABC"
           cat README.md
-          echo ${DOCKERFILE_CONTENT}
+          cat ${DOCKERFILE_CONTENT}
           '''
         }
 
