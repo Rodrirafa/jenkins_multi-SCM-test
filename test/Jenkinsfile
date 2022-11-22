@@ -4,7 +4,8 @@ pipeline {
   options {
     buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
   }
-
+  configFileProvider(
+        [configFile(fileId: 'service_dockerfile', variable: 'DOCKERFILE_CONTENT')])
   stages {
 
     stage('Hello') {
@@ -19,13 +20,13 @@ pipeline {
       //when {
       //  branch "test*"
       //}
-      
+
       steps {
         sh '''
           ls -a
           echo "ABC"
           cat README.md
-          docker ps
+          cat ${TEST}
         '''
       }
     }
